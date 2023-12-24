@@ -1,22 +1,25 @@
 import numpy as np
 import pandas as pd
 import datetime as dt
+import sys
+sys.path.insert(1, '/api/db')
+
 
 total_stock = 6*24
 interv = 600
 mat = np.zeros((total_stock,2))
 df_total = pd.DataFrame(['total'], index=['heure'])
-df_total.to_csv('db/test.csv')
+df_total.to_csv('api/db/test.csv')
 
 def init_db(page):
     # pour initier les bases de données
     df = pd.DataFrame({'contenu':'blablaao'}, index=[f'{page}'])
     df.index.name = 'titre'
-    df.to_csv(f'db/{page}.csv')
+    df.to_csv(f'api/db/{page}.csv')
 
 def add_count():
     """fonction qui compte le nombre de connections et envoie à la db tous les interv et stock un nombre total_stock"""
-    df_total = pd.read_csv('db/count.csv', index_col=[0])
+    df_total = pd.read_csv('api/db/count.csv', index_col=[0])
     derniere_heure = df_total.index.max()
     total = int(df_total.loc[derniere_heure]['total']) + 1
     now = dt.datetime.now()
@@ -34,22 +37,22 @@ def add_count():
                 df_total = df_total.drop(df_total.index.min())
     else : 
         df_total.loc[df_total.index.max()] += 1
-    df_total.to_csv('db/count.csv')
+    df_total.to_csv('api/db/count.csv')
 
 def ten_count():
-    df_total = pd.read_csv('db/count.csv', index_col=[0])
+    df_total = pd.read_csv('api/db/count.csv', index_col=[0])
     derniere_heure = df_total.index.max()
     avant_derniere_heure = df_total.drop(derniere_heure).index.max()
     return df_total.loc[derniere_heure]['total']-df_total.loc[avant_derniere_heure]['total']
 
 def day_count():
-    df_total = pd.read_csv('db/count.csv', index_col=[0])
+    df_total = pd.read_csv('api/db/count.csv', index_col=[0])
     derniere_heure = df_total.index.max()
     premiere_heure = df_total.index.min()
     return df_total.loc[derniere_heure]['total']-df_total.loc[premiere_heure]['total']
 
 def hour_count():
-    df_total = pd.read_csv('db/count.csv', index_col=[0])
+    df_total = pd.read_csv('api/db/count.csv', index_col=[0])
     derniere_heure = df_total.index.max()
     total_derniere_heure = df_total.loc[derniere_heure]['total']
     for k in range(6):
@@ -60,26 +63,26 @@ def hour_count():
     return total_derniere_heure-total_derniere_heure_avant
 
 def total_count():
-    df_total = pd.read_csv('db/count.csv', index_col=[0])
+    df_total = pd.read_csv('api/db/count.csv', index_col=[0])
     derniere_heure = df_total.index.max()
     return df_total.loc[derniere_heure]['total']
 
 
 
 def modify_text(texte, page):
-    df = pd.read_csv(f'db/contenu.csv', index_col='titre')
+    df = pd.read_csv(f'api/db/contenu.csv', index_col='titre')
     df.loc[f'{page}'] = texte
-    df.to_csv(f'db/contenu.csv')
+    df.to_csv(f'api/db/contenu.csv')
 
 
 def read_text(page):
-    df = pd.read_csv(f'db/contenu.csv', index_col='titre')
+    df = pd.read_csv(f'api/db/contenu.csv', index_col='titre')
     try:
         contenu = df.loc[f'{page}']['contenu']
         return contenu
     except:
         modify_text('initialisation page', page)
-        df = pd.read_csv(f'db/contenu.csv', index_col='titre')
+        df = pd.read_csv(f'api/db/contenu.csv', index_col='titre')
         return df.loc[f'{page}']['contenu']
 
 def add_recette(nom_recette):
@@ -87,12 +90,12 @@ def add_recette(nom_recette):
     nom_sans_espace = ""
     for element in nom_recette.split(' '):
         nom_sans_espace += element + '_'
-    df = pd.read_csv(f'db/recettes.csv', index_col=0)
+    df = pd.read_csv(f'api/db/recettes.csv', index_col=0)
     df.loc[nom_recette] = 1
-    df.to_csv(f'db/recettes.csv')
+    df.to_csv(f'api/db/recettes.csv')
 
 def list_recette():
-    df = pd.read_csv('db/recettes.csv', index_col=0)
+    df = pd.read_csv('api/db/recettes.csv', index_col=0)
     liste = []
     for recette in list(df.index):
         print(df.loc[recette].keys())

@@ -1,5 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import pandas as pd
+import sys
+sys.path.insert(1, '/api/data_base')
+sys.path.insert(1, '/api/db')
 from data_base import read_text, modify_text, add_count, ten_count, day_count, hour_count, total_count, add_recette, list_recette, sans_espace
 from wsgiref.simple_server import make_server
 import os
