@@ -1,0 +1,47 @@
+{%extends "base.html"%}
+{%block head%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
+<title>La cueillette des gourmands</title>
+{%endblock%}
+
+
+{%block content%}
+
+{%if session.get('utilisateur') != "admin" %}
+<div class="image_debut">
+</div>
+{%endif%}
+
+
+<div class='texte-index'>
+    <h1>Bienvenue à la cueillette des gourmands </h1>
+    {%if session["version"]=="admin"%}
+    <form method="POST" action="">
+        <p>
+            <label for="texte_accueil"></label><br>
+            <textarea name="texte_accueil" id="texte_accueil" >{{texte}}</textarea>
+        </p>
+        <p class="bouton-poster"><input type="submit" value="Poster"></p>
+    </form>
+    {%else%}
+    <p>
+        {% for line in texte %}
+          {{ line }}
+          <br>
+        {% endfor %}
+    </p>
+    {%endif%}
+
+    <h1>Conseils pratiques </h1>
+    <p>Merci d’apporter vos contenants (sacs, paniers, cageots, bols…), ils seront pesés au chalet à votre arrivée.</p>
+    <p>Les jours de pluie, les bottes sont bien utiles.</p>
+    <p>Vous pouvez payer en espèces, CB.</p>
+    <p>Les chiens ne sont pas admis sur l'exploitation.</p>
+
+    <h1>Quelques consignes à respecter :</h1>
+    <p>Les légumes disponibles à la cueillette sont toujours signalés par une ardoise indiquant le tarif. Sans panneau : je ne cueille pas.</p>
+    <p>Il est interdit de consommer sur place, merci de respecter notre travail.</p>
+    <p>Les enfants doivent rester avec leurs accompagnants, ils sont sous leur responsabilité.</p>
+</div>
+
+{%endblock%}

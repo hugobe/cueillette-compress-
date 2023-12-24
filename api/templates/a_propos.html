@@ -1,0 +1,41 @@
+{%extends "base.html"%}
+{%block head%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/a_propos.css')}}">
+<title>À propos</title>
+{%endblock%}
+
+
+{%block content%}
+{%if session.get('utilisateur') != "admin" %}
+<div class="image_debut">
+</div>
+{%endif%}
+
+
+
+<div class="texte-a-propos">
+    <h1>La cueillette :</h1>
+    <p>
+        La cueillette des gourmands  est un potager de 4.5 hectares où vous pouvez venir récolter des légumes et des fruits de saison du mois de mai à fin octobre.
+    </p>
+    <p>La production est certifiée en agriculture biologique.</p>
+    <p>La totalité des produits proposés est cultivée sur l'exploitation.</p>
+    <h1>Qui sommes nous ?</h1>
+    <p>La cueillette a été créée en 2008 par Dominique. Stéphane l'a rejoint en 2022. 
+    </p>
+    <P>Nous souhaitons conserver une exploitation familiale à taille humaine.</P>
+    <h1>Où nous trouver ?</h1>
+    <div class = "plan">
+        <div>
+        <p>Depuis Nantes, prendre la route de Pornic, sortie la mouchonnerie le labyrinthe, passer devant le labyrinthe, prendre la première à gauche et vous êtes arrivés.</p>
+        <p>Adresse : <a target = _blank href="https://www.google.fr/maps/place/La+cueillette+des+gourmands/@47.1715148,-1.6904082,12.8z/data=!4m6!3m5!1s0x480595e273222b4f:0x3375adf0fa2ba242!8m2!3d47.1637997!4d-1.6652911!16s%2Fg%2F11h7fm1537?entry=ttu">
+            2 route de la bergerie verte, Bouaye, 44830</a></p>
+        </div>
+        <a target = _blank href="https://www.google.fr/maps/place/La+cueillette+des+gourmands/@47.1715148,-1.6904082,12.8z/data=!4m6!3m5!1s0x480595e273222b4f:0x3375adf0fa2ba242!8m2!3d47.1637997!4d-1.6652911!16s%2Fg%2F11h7fm1537?entry=ttu">
+        <img src="../static/img/photo/plan.png" alt="plan" title="plan">
+        </a>
+    </div>
+    <h1>Nous contacter :</h1>  
+    <p> téléphone : 06 43 56 03 74</p>
+</div>
+{%endblock%}

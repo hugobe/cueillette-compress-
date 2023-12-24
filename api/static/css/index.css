@@ -1,0 +1,8 @@
+
+.image_debut {
+    background-image: url(../img/photo/ranges_fraises.jpeg);
+    background-repeat: no-repeat;
+    background-position: center 25%;
+    background-size: cover;
+    height : 30em;
+}

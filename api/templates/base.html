@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" href="../static/img/logo/fraise.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="logo_cueillette" href="{{ url_for('index')}}">
+            <img src="{{ url_for('static', filename='img/logo/logo_cueillette.png')}}" alt="logo cueillette des gourmands" title="logo cueilllette" >
+            </a>
+
+            <div class="cliquable">
+                <a href="{{ url_for('a_cueillir')}}">À cueillir</a>
+                <a href="{{ url_for('horaires')}}">Horaires</a>
+                <a href="{{ url_for('liste_recettes')}}">Recettes</a>
+                <a href="{{ url_for('photos')}}">Photos</a>
+                <a href="{{ url_for('calendrier')}}">Calendrier</a>
+                <a href="{{ url_for('a_propos')}}">À propos</a>
+            </div>
+
+            <a class="logo_bio" href="https://www.agencebio.org" target="_blank"><img src="{{ url_for('static', filename='img/logo/logo-bio_0.png')}}" alt="logo bio" title="logo bio"></a>
+          
+        </nav>
+        {%if session['utilisateur']=="admin" %} 
+        <div class="admin-barre">
+            <div class="nb-utilisateurs">
+            <p>Vous êtes connectés</p>
+            <p>Total visiteurs : {{total_count}}</p>
+            <p>Total visiteurs sur la journée : {{day_count}}</p>
+            <p>Total visiteurs sur la dernière heure : {{hour_count}}</p>
+            <p>Total visiteurs sur les dernières 10min : {{ten_count}}</p>
+            </div>
+            <form action="" method="POST">
+            {%if session["version"]=="visiteur"%}
+            <button type="submit" name="version" value="admin">Version admin</button>
+            {%else%}
+            <button type="submit" name="version" value="visiteur">Version visiteur</button>
+            {% endif %}
+            </form>
+        </div>
+        {%endif%}
+    </header>
+        <main>
+        {% block content %} {% endblock %}
+   
+
+    </main> 
+</body>
+<footer>
+    <div class="trouver">
+    <h1>
+        Où nous trouver ?
+    </h1>
+    <a target = _blank href="https://www.google.fr/maps/place/La+cueillette+des+gourmands/@47.1715148,-1.6904082,12.8z/data=!4m6!3m5!1s0x480595e273222b4f:0x3375adf0fa2ba242!8m2!3d47.1637997!4d-1.6652911!16s%2Fg%2F11h7fm1537?entry=ttu">
+    2 route de la bergerie verte, Bouaye, 44830</a>
+    </div>
+    <div class='contacter'>
+    <h1>Nous contacter :</h1>  
+    <p>06 43 56 03 74</p>
+    </div>
+    <a class="lien_foot admin" href="{{ url_for('admin')}}">Admin</a>
+    <a class="lien_foot credits" href="{{ url_for('credit')}}">Crédits</a>
+</footer>
+</html>

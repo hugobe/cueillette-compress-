@@ -1,0 +1,51 @@
+.image_debut {
+    background-image: url(../img/photo/potimarons.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:30em;
+    background-position: center 50%;
+}
+
+
+.img_recette{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr ;
+    padding-right:100px
+}
+
+.img_recette img{
+    max-width: 100%;
+    margin: auto;
+    padding-top:50px;
+}
+
+
+textarea{
+    width: 100%
+}
+
+form div{
+    padding-left: 200px;
+    padding-top:60px;
+}
+
+button{
+    background-color: white;
+    padding-right:15px;
+    padding-left:15px;
+    padding-top:15px;
+    padding-bottom:15px;
+    border-radius: 10px;
+    box-shadow: 0px;
+    border : 1px solid black;
+}
+
+button:hover{
+    background-color:#EEEE
+}
+
+.bouton{
+    padding-top:70px;
+    display:flex;
+    justify-content:center;
+}

@@ -1,0 +1,27 @@
+.image_debut {
+    background-image: url(../img/photo/fleur_petite.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:30em;
+    background-position: center 42%;
+}
+
+
+.plan{
+    display:flex;
+}
+
+.plan img{width :90%}
+
+.plan div{
+    margin:auto;
+}
+
+.plan div p{
+    padding-bottom : 80px;
+}
+
+#texte_horaires{
+    height : 120px;
+    min-height : 120px;
+}

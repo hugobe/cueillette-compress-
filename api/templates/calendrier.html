@@ -1,0 +1,20 @@
+{%extends "base.html"%}
+{%block head%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/calendrier.css')}}">
+<title>Calendrier des récoltes</title>
+{%endblock%}
+
+
+
+{%block content%}
+{%if session.get('utilisateur') != "admin" %}
+<div class="image_debut">
+</div>
+{%endif%}
+<h1>Calendrier indicatif des récoltes: </h1>
+<p>Ce tableau peut varier en fonction des conditions météo.</p>
+
+<div class='calendrier'>
+    <img src="{{ url_for('static', filename='img/photo/calendrier.jpeg')}}" alt='calendrier des récoltes' title='calendrier des récoltes'>
+</div>
+{%endblock%}

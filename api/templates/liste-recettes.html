@@ -1,0 +1,31 @@
+{%extends "base.html"%}
+{%block head%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/liste-recettes.css')}}">
+<title>Recettes</title>
+{%endblock%}
+
+
+{%block content%}
+{%if session.get('utilisateur') != "admin" %}
+<div class="image_debut">
+</div>
+{%endif%}
+<h1>Liste des recettes :</h1>
+{% for recette in liste_recette %}
+    <div class='nom_recette'>
+    <a href="{{'recettes/'+ recette}}">{{espace(recette).title()}}</a>
+</div>
+{%endfor%}
+
+
+{%if session["version"]=="admin"%}
+    <form method="POST" action="">
+        <p>
+            <label for="Nouvelle recette">Nouvelles recettes :</label>
+            <input type="recette" name="recette" id="recette" required>
+      <input type="submit" value="Ajouter la recette"></p>
+    </form>
+    {%endif%}
+
+
+{%endblock%}

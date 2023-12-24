@@ -1,0 +1,88 @@
+{%extends "base.html"%}
+{%block head%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/recettes.css')}}">
+<title>Recettes</title>
+{%endblock%}
+
+{%block content%}
+
+{%if session.get('utilisateur') != "admin" %}
+<div class="image_debut">
+</div>
+{%endif%}
+
+
+<div class='img_recette'>
+    <div>
+        <h1>Recette : {{nom_recette_sans_espace}}</h1>
+
+        <h2>Ingrédients : </h2>
+
+        {%if session["version"]=="admin"%}
+    <form method="POST" action="">
+        <p>
+            <label for="texte_ingredients"></label><br>
+            <textarea name="{{'texte_ingredients-'+ nom_recette}}" id= "{{'texte_ingredients-'+ nom_recette}}">{{texte_ingredients}}</textarea>
+        </p>
+        <p class="bouton-poster"><input type="submit" value="Poster"></p>
+    </form>
+    {%else%}
+    <p>
+        {% for line in texte_ingredients %}
+          {{ line }}
+          <br>
+        {% endfor %}
+    </p>
+    {%endif%}
+
+
+
+        <h2>Étapes : </h2>
+
+        {%if session["version"]=="admin"%}
+    <form method="POST" action="">
+        <p>
+            <label for="texte_etapes"></label><br>
+            <textarea name="{{'texte_etapes-'+ nom_recette}}" id="texte_etapes-tarte_rubarbe">{{texte_etapes}}</textarea>
+        </p>
+        <p class="bouton-poster"><input type="submit" value="Poster"></p>
+    </form>
+    {%else%}
+    <p>
+        {% for line in texte_etapes %}
+          {{ line }}
+          <br>
+        {% endfor %}
+    </p>
+    {%endif%}
+
+
+    </div>
+
+    <!-- <img src="{{'static/img/uploads/recettes/'+nom_recette+'.jpeg'}}"> -->
+    <img src="{{'../static/img/uploads/recettes/'+nom_recette+'.jpeg'}}">
+
+</div>
+
+{% if session.get('version')=='admin' %}
+
+  <form action="{{'/upload/recettes/'+nom_recette}}" method="post" enctype="multipart/form-data">
+    <div>
+    <label for="{{nom_recette}}">Photo  : </label>
+    <input type="file" name="file" required>
+    <input type="submit" value="Upload">
+    </div>
+</form>
+{%endif%}
+
+
+
+{%if session["version"]=="admin"%}
+<form method="POST" action="" class='bouton'>
+
+        <button type="submit" name="supprimer" value="oui">Supprimer la recette</button>
+</form>
+{%endif%}
+
+
+{%endblock%}

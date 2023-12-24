@@ -1,0 +1,32 @@
+.image_debut {
+    background-image: url(../img/photo/potimarons.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:30em;
+    background-position: center 50%;
+}
+
+textarea{
+    width: 10%;
+    height : 10px;
+    min-height : 190px;
+    border-radius : 7px;
+    box-shadow: 0px;
+    border : 1px solid black;
+    font-family: 'Montserrat', sans-serif;
+    font-size:0.8em;
+}
+
+form{
+    padding-top: 40px;
+}
+
+main a{
+    font-weight : 500 ;
+}
+
+.nom_recette{
+    padding-left :320px;
+    padding-top : 10px;
+    font-size : 1.3em;
+}

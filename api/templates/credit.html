@@ -1,0 +1,28 @@
+{%extends "base.html"%}
+{%block head%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/credit.css')}}">
+<title>Crédits</title>
+{%endblock%}
+
+
+{%block content%}
+{%if session.get('utilisateur') != "admin" %}
+<div class="image_debut">
+</div>
+{%endif%}
+
+
+<h1>Développeur</h1>
+<p>Ce site a été développé par Hugo Pavy. N'hésitez pas à le contacter pour toute demande de projets d'informatique. </p>
+<p>Lien de son linkedin : <a target= _blank href="https://www.linkedin.com/in/hugo-pavy-a73567255/"><img src="../static/img/logo/logo_linkedin.png" alt="logo linkedin" title = "logo likedin"></a></p>
+
+
+<h1>Autres crédits :</h1>
+<p>Logo de la fraise :
+<a target = _blank href="https://www.flaticon.com/fr/icones-gratuites/fraise" title="fraise icônes">Fraise icônes créées par Icongeek26 - Flaticon</a>
+</p>
+<p>Logo Likedin : 
+<a target=_blank href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by Pixel Buddha - Flaticon</a>
+</p>
+
+{%endblock%}

@@ -1,0 +1,177 @@
+
+    nav{display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content: space-between;
+    background-color:white;
+    height:90px;
+    padding-top:20px;
+    padding-bottom:20px;
+    font-size: 1.7em;
+    gap:50px;
+    font-family: 'Cormorant', serif;
+    color:black;
+    position:fixed;
+    width:100%;
+    z-index:10
+    }
+    nav img{
+        height:90px;
+    }
+    
+
+
+header{
+    display:flex;
+    flex-direction : column;
+    align-items:center;
+}
+
+header nav + p{
+    padding-top:130px
+}
+
+
+nav a{
+    text-decoration:none;
+    display:inline-block;
+    padding-right:15px;
+    padding-left:15px;
+    padding-top:15px;
+    padding-bottom:15px;
+    color:black;
+    background-color:white;
+    border-radius: 10px;
+}
+
+.cliquable a:hover{
+    background-color:#EEEEEE;
+}
+
+footer{
+    background-color:#EEEEEE;
+    width: 100%;
+    height:200px;
+    margin-top:80px;
+}
+
+.logo_bio{
+    padding-right:50px
+}
+
+.logo_cueillette{
+    padding-left:50px
+}
+
+footer{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows : 1fr 1fr;
+
+}
+
+footer div{
+    margin : auto;
+}
+
+.trouver{
+    padding-left:150px;
+}
+
+.contacter{
+    padding-right:150px;
+}
+
+footer div a{
+    text-decoration : none;
+}
+
+
+.lien_foot{
+    display : inline-block;
+    margin:auto;
+    text-decoration: none;
+}
+
+footer h1{
+    margin-bottom : 10px;
+    font-family: 'Cormorant', serif;
+    text-align: center;
+}
+
+footer{
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer p {
+    text-align : center;
+}
+
+footer div a{
+    display : inline-block;
+    margin : auto;
+}
+
+.credits{
+    padding-right: 150px;
+}
+
+.admin{
+    padding-left: 150px;
+}
+
+footer a{
+    color:black;
+    display : inline-block;
+    border-radius: 10px
+}
+
+footer a:hover{
+    text-decoration : underline;
+}
+
+.admin-barre{
+    padding-top: 150px;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size:1em;
+    display:flex;
+    flex-direction:row;
+    justify-content : space-between;
+    align-items: center;
+    padding-bottom: 30px;
+    background-color: rgb(255, 154, 154);
+}
+
+.nb-utilisateurs{
+    padding-left : 150px;
+}
+
+.admin-barre form{
+    padding-right:150px;
+}
+
+.admin-barre button{
+    background-color: white;
+    padding-right:15px;
+    padding-left:15px;
+    padding-top:15px;
+    padding-bottom:15px;
+    border-radius: 10px;
+    box-shadow: 0px;
+    border : 1px solid black;
+}
+
+
+.admin-barre button:hover{
+    background-color: #EEEEEE;
+    box-shadow: 0px;
+}
+
+.logo_cueillette:hover{
+        opacity: 0.7;
+}
+
+.logo_bio:hover{
+    opacity: 0.7;
+}

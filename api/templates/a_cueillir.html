@@ -1,0 +1,89 @@
+{%extends "base.html"%}
+{%block head%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/a_cueillir.css')}}">
+<title>À cueillir</title>
+{%endblock%}
+
+
+
+{%block content%}
+{%if session.get('utilisateur') != "admin" %}
+<div class="image_debut">
+</div>
+{%endif%}
+
+
+
+<div class='texte-cueillir'>
+    <h1>Disponible en ce moment</h1>
+    {%if session["version"]=="admin"%}
+    <form method="POST" action="">
+        <p>
+            <label for="texte_date"></label><br>
+            <textarea name="texte_date" id="texte_date" >{{texte_date}}</textarea>
+        </p>
+        <p class="bouton-poster"><input type="submit" value="Poster"></p>
+    </form>
+    {%else%}
+    <p>
+        {% for line in texte_date %}
+          {{ line }}
+          <br>
+        {% endfor %}
+    </p>
+    {%endif%}
+    <h2>À cueillir :</h2>
+    {%if session["version"]=="admin"%}
+    <form method="POST" action="">
+        <p>
+            <label for="texte_cueillir"></label><br>
+            <textarea name="texte_cueillir" id="texte_cueillir" >{{texte_cueillir}}</textarea>
+        </p>
+        <p class="bouton-poster"><input type="submit" value="Poster"></p>
+    </form>
+    {%else%}
+    <p>
+        {% for line in texte_cueillir %}
+          {{ line }}
+          <br>
+        {% endfor %}
+    </p>
+    {%endif%}
+
+    <h2>Disponible au chalet :</h2>
+    {%if session["version"]=="admin"%}
+    <form method="POST" action="">
+        <p>
+            <label for="texte_chalet"></label><br>
+            <textarea name="texte_chalet" id="texte_chalet" >{{texte_chalet}}</textarea>
+        </p>
+        <p class="bouton-poster"><input type="submit" value="Poster"></p>
+    </form>
+    {%else%}
+    <p>
+        {% for line in texte_chalet %}
+          {{ line }}
+          <br>
+        {% endfor %}
+    </p>
+    {%endif%}
+
+    <h2>Disponible plus tard dans la saison :</h2>
+    {%if session["version"]=="admin"%}
+    <form method="POST" action="">
+        <p>
+            <label for="texte_tard"></label><br>
+            <textarea name="texte_tard" id="texte_tard" >{{texte_tard}}</textarea>
+        </p>
+        <p class="bouton-poster"><input type="submit" value="Poster"></p>
+    </form>
+    {%else%}
+    <p>
+        {% for line in texte_tard %}
+          {{ line }}
+          <br>
+        {% endfor %}
+    </p>
+    {%endif%}
+</div>
+{%endblock%}

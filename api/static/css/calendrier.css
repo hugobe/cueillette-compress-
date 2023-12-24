@@ -1,0 +1,16 @@
+.image_debut {
+    background-image: url(../img/photo/tomate.jpeg);
+    background-repeat: no-repeat;
+    background-position: center 25%;
+    background-size: cover;
+    height : 30em;
+}
+
+.calendrier img{
+    width:75%;
+}
+
+.calendrier{
+    display:flex;
+    justify-content:center;
+}

@@ -1,0 +1,18 @@
+.image_debut {
+    background-image: url(../img/photo/tomates_3.jpeg);
+    background-repeat: no-repeat;
+    background-position: center 25%;
+    background-size: cover;
+    height : 30em;
+}
+
+.connection{
+    display : flex;
+    justify-content : center;
+    flex-direction : column;
+    align-items : center;
+}
+
+.connection h1{
+    padding-left:0;
+}

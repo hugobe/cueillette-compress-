@@ -1,0 +1,202 @@
+{%extends "base.html"%}
+{%block head%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/photos.css')}}">
+<title>Galerie photo</title>
+{%endblock%}
+
+{%block content%}
+
+<main>
+        <h1>Galerie photos :</h1>
+    <section class="section-photos">
+        
+        <div class='tableau-photo'>
+            {% if session.get('version')=='admin' %}
+            <a href="static/img/uploads/photos/photo1.jpeg" target=_blank class="lien-conteneur-photo">
+                <img src="static/img/uploads/photos/photo1.jpeg" alt="Photo 1" title="Photo 1" >
+                <div class="photo-hover">Photo 1</div>
+            </a>
+            {%else%}
+            <a href="static/img/uploads/photos/photo1.jpeg" target=_blank class="lien-conteneur-photo">
+                <img src="static/img/uploads/photos/photo1.jpeg" alt="Photo 1" title="Photo 1">
+                <div class="photo-hover">Voir la photo</div>
+            </a>
+            {%endif%}
+            {% if session.get('version')=='admin' %}
+            <a href="static/img/uploads/photos/photo2.jpeg" target=_blank class="lien-conteneur-photo">
+                <img src="static/img/uploads/photos/photo2.jpeg" alt="Photo 2" title="Photo 2" >
+                <div class="photo-hover">Photo 2</div>
+            </a>
+            {%else%}
+            <a href="static/img/uploads/photos/photo2.jpeg" target=_blank class="lien-conteneur-photo">
+                <img src="static/img/uploads/photos/photo2.jpeg" alt="Photo 2" title="Photo 2">
+                <div class="photo-hover">Voir la photo</div>
+            </a>
+            {%endif%}
+            {% if session.get('version')=='admin' %}
+            <a href="static/img/uploads/photos/photo3.jpeg" target=_blank class="lien-conteneur-photo">
+                <img src="static/img/uploads/photos/photo3.jpeg" alt="Photo 3" title="Photo 3" >
+                <div class="photo-hover">Photo 3</div>
+            </a>
+            {%else%}
+            <a href="static/img/uploads/photos/photo3.jpeg" target=_blank class="lien-conteneur-photo">
+                <img src="static/img/uploads/photos/photo3.jpeg" alt="Photo 3" title="Photo 3">
+                <div class="photo-hover">Voir la photo</div>
+            </a>
+            {%endif%}
+            {% if session.get('version')=='admin' %}
+            <a href="static/img/uploads/photos/photo4.jpeg" target=_blank class="lien-conteneur-photo">
+                <img src="static/img/uploads/photos/photo4.jpeg" alt="Photo 4" title="Photo 4" >
+                <div class="photo-hover">Photo 4</div>
+            </a>
+            {%else%}
+            <a href="static/img/uploads/photos/photo4.jpeg" target=_blank class="lien-conteneur-photo">
+                <img src="static/img/uploads/photos/photo4.jpeg" alt="Photo 4" title="Photo 4">
+                <div class="photo-hover">Voir la photo</div>
+            </a>
+            {%endif%}
+            {% if session.get('version')=='admin' %}
+            <a href="static/img/uploads/photos/photo5.jpeg" target=_blank class="lien-conteneur-photo">
+                <img src="static/img/uploads/photos/photo5.jpeg" alt="Photo 5" title="Photo 5" >
+                <div class="photo-hover">Photo 5</div>
+            </a>
+            {%else%}
+            <a href="static/img/uploads/photos/photo5.jpeg" target=_blank class="lien-conteneur-photo">
+                <img src="static/img/uploads/photos/photo5.jpeg" alt="Photo 5" title="Photo 5">
+                <div class="photo-hover">Voir la photo</div>
+            </a>
+            {%endif%}
+            {% if session.get('version')=='admin' %}
+            <a href="static/img/uploads/photos/photo6.jpeg" target=_blank class="lien-conteneur-photo">
+                <img src="static/img/uploads/photos/photo6.jpeg" alt="Photo 6" title="Photo 6" >
+                <div class="photo-hover">Photo 6</div>
+            </a>
+            {%else%}
+            <a href="static/img/uploads/photos/photo6.jpeg" target=_blank class="lien-conteneur-photo">
+                <img src="static/img/uploads/photos/photo6.jpeg" alt="Photo 6" title="Photo 6">
+                <div class="photo-hover">Voir la photo</div>
+            </a>
+            {%endif%}
+
+            {% if session.get('version')=='admin' %}
+            <a href="static/img/uploads/photos/photo7.jpeg" target=_blank class="lien-conteneur-photo">
+                <img src="static/img/uploads/photos/photo7.jpeg" alt="Photo 7" title="Photo 7" >
+                <div class="photo-hover">Photo 7</div>
+            </a>
+            {%else%}
+            <a href="static/img/uploads/photos/photo7.jpeg" target=_blank class="lien-conteneur-photo">
+                <img src="static/img/uploads/photos/photo7.jpeg" alt="Photo 7" title="Photo 7">
+                <div class="photo-hover">Voir la photo</div>
+            </a>
+            {%endif%}
+
+            {% if session.get('version')=='admin' %}
+            <a href="static/img/uploads/photos/photo8.jpeg" target=_blank class="lien-conteneur-photo">
+                <img src="static/img/uploads/photos/photo8.jpeg" alt="Photo 8" title="Photo 8" >
+                <div class="photo-hover">Photo 8</div>
+            </a>
+            {%else%}
+            <a href="static/img/uploads/photos/photo8.jpeg" target=_blank class="lien-conteneur-photo">
+                <img src="static/img/uploads/photos/photo8.jpeg" alt="Photo 8" title="Photo 8">
+                <div class="photo-hover">Voir la photo</div>
+            </a>
+            {%endif%}
+
+            {% if session.get('version')=='admin' %}
+            <a href="static/img/uploads/photos/photo9.jpeg" target=_blank class="lien-conteneur-photo">
+                <img src="static/img/uploads/photos/photo9.jpeg" alt="Photo 9" title="Photo 9" >
+                <div class="photo-hover">Photo 9</div>
+            </a>
+            {%else%}
+            <a href="static/img/uploads/photos/photo9.jpeg" target=_blank class="lien-conteneur-photo">
+                <img src="static/img/uploads/photos/photo9.jpeg" alt="Photo 9" title="Photo 9">
+                <div class="photo-hover">Voir la photo</div>
+            </a>
+            {%endif%}
+        </div>
+    </section>
+
+    <html>
+
+{% if session.get('version')=='admin' %}
+
+  <form action="/upload/photo1" method="post" enctype="multipart/form-data">
+    <div>
+    <label for="file1">Photo 1 : </label>
+    <input type="file" name="file" required>
+    <input type="submit" value="Upload">
+    </div>
+</form>
+   
+<form action="/upload/photo2" method="post" enctype="multipart/form-data">
+    <div>
+    <label for="file2">Photo 2 : </label>
+    <input type="file" name="file" required>
+    <input type="submit" value="Upload">
+    </div>
+</form>
+
+<form action="/upload/photo3" method="post" enctype="multipart/form-data">
+    <div>
+    <label for="file3">Photo 3 : </label>
+    <input type="file" name="file" required>
+    <input type="submit" value="Upload">
+    </div>
+</form>
+
+<form action="/upload/photo4" method="post" enctype="multipart/form-data">
+    <div>
+    <label for="file4">Photo 4 : </label>
+    <input type="file" name="file" required>
+    <input type="submit" value="Upload">
+    </div>
+</form>
+
+<form action="/upload/photo5" method="post" enctype="multipart/form-data">
+    <div>
+    <label for="file5">Photo 5 : </label>
+    <input type="file" name="file" required>
+    <input type="submit" value="Upload">
+    </div>
+</form>
+
+<form action="/upload/photo6" method="post" enctype="multipart/form-data">
+    <div>
+    <label for="file6">Photo 6 : </label>
+    <input type="file" name="file" required>
+    <input type="submit" value="Upload">
+    </div>
+</form>
+
+<form action="/upload/photo7" method="post" enctype="multipart/form-data">
+    <div>
+    <label for="file7">Photo 7 : </label>
+    <input type="file" name="file" required>
+    <input type="submit" value="Upload">
+    </div>
+</form>
+
+
+<form action="/upload/photo8" method="post" enctype="multipart/form-data">
+    <div>
+    <label for="file8">Photo 8 : </label>
+    <input type="file" name="file" required>
+    <input type="submit" value="Upload">
+    </div>
+</form>
+
+
+<form action="/upload/photo9" method="post" enctype="multipart/form-data">
+    <div>
+    <label for="file9">Photo 9 : </label>
+    <input type="file" name="file" required>
+    <input type="submit" value="Upload">
+    </div>
+</form>
+
+{%endif%}
+
+
+
+</main>
+{%endblock%}

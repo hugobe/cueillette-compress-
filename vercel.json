@@ -1,0 +1,14 @@
+{
+    "builds": [
+        {
+        "src":"api/app_cueillette.py",
+        "use":"@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src":"/(.*)",
+            "dest": "api/app_cueillette.py"
+        }
+    ]
+}

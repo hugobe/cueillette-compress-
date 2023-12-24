@@ -1,0 +1,36 @@
+{%extends "base.html"%}
+{%block head%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css')}}">
+<title>Admin</title>
+{%endblock%}
+
+{%block content%}
+{%if session.get('utilisateur') != "admin" %}
+<div class="image_debut">
+</div>
+{%endif%}
+<div class="connection">
+<h1>Page de connection (réservée aux propriétaires du site)</h1>
+    <form action={{ url_for('admin') }} method="POST">
+        <p>
+            <!-- Champ de type "text" -->
+            <label for="nom">Nom : </label>
+            <input type="text" name="nom" id="nom">
+        </p>
+        <p>
+            <!-- Champ de type "password" -->
+            <label for="mdp">Mot de passe : </label>
+            <input type="password" name="mdp" id="mdp" required>
+        </p>
+        
+        <p>
+            <!-- Bouton d'envoi du formulaire -->
+            <input type="submit" value="Me connecter">
+            <!-- <button type="submit">Envoyer le formulaire</button> -->
+        </p>
+    </form>
+{% if session['utilisateur']=='mauvais' %}
+    <p style="/*!*/margin-top: 40px;">Le nom d'utilisateur ou le mot de passe que vous avez rentré est mauvais, réessayer.</p>
+{% endif %}
+</div>
+{%endblock%}

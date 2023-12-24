@@ -1,0 +1,12 @@
+.image_debut {
+    background-image: url(../img/photo/tomates_3.jpeg);
+    background-repeat: no-repeat;
+    background-position: center 25%;
+    background-size: cover;
+    height : 30em;
+}
+
+
+main a img{
+    height:1.5em;
+}

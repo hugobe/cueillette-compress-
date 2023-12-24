@@ -1,0 +1,56 @@
+
+main h1{
+    margin-top:4em;
+}
+
+
+.tableau-photo{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:400px 400px 400px;
+    gap: 15px;
+    padding-left:40px;
+    padding-right:40px;
+}
+
+.lien-conteneur-photo img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.lien-conteneur-photo {
+    position: relative;
+  }
+
+.photo-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    display:none; 
+  }
+  
+.lien-conteneur-photo:hover .photo-hover {
+    display: flex;
+  }
+
+h1{
+    margin-bottom:60px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:10px;
+    padding-top : 30px;
+    padding-left : 100px ;
+}

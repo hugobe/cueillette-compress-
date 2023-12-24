@@ -1,0 +1,50 @@
+{%extends "base.html"%}
+{%block head%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/horaires.css')}}">
+<title>Horaires d'ouverture</title>
+{%endblock%}
+
+
+
+
+{%block content%}
+{%if session.get('utilisateur') != "admin" %}
+<div class="image_debut">
+
+</div>
+{%endif%}
+
+
+<div class = "texte-horaires">
+    <h1>Les horaires d'ouverture :</h1>
+    {%if session["version"]=="admin"%}
+    <form method="POST" action="">
+        <p>
+            <label for="texte_horaires"></label><br>
+            <textarea name="texte_horaires" id="texte_horaires" >{{texte}}</textarea>
+        </p>
+        <p class="bouton-poster"><input type="submit" value="Poster"></p>
+    </form>
+    {%else%}
+    <p>
+        {% for line in texte %}
+          {{ line }}
+          <br>
+        {% endfor %}
+    </p>
+    {%endif%}
+    <h1>Où nous trouver ?</h1>
+    <div class = "plan">
+        <div>
+        <p>Depuis Nantes, prendre la route de Pornic, sortie la mouchonnerie le labyrinthe, passer devant le labyrinthe, prendre la première à gauche et vous êtes arrivés.</p>
+        <p>Adresse : <a target = _blank href="https://www.google.fr/maps/place/La+cueillette+des+gourmands/@47.1715148,-1.6904082,12.8z/data=!4m6!3m5!1s0x480595e273222b4f:0x3375adf0fa2ba242!8m2!3d47.1637997!4d-1.6652911!16s%2Fg%2F11h7fm1537?entry=ttu">
+            2 route de la bergerie verte, Bouaye, 44830</a></p>
+        </div>
+        <a target = _blank href="https://www.google.fr/maps/place/La+cueillette+des+gourmands/@47.1715148,-1.6904082,12.8z/data=!4m6!3m5!1s0x480595e273222b4f:0x3375adf0fa2ba242!8m2!3d47.1637997!4d-1.6652911!16s%2Fg%2F11h7fm1537?entry=ttu">
+        <img src="../static/img/photo/plan.png" alt="plan" title="plan">
+        </a>
+    </div>
+    <h1>Nous contacter :</h1>  
+    <p> téléphone : 06 43 56 03 74</p>
+</div>
+{%endblock%}

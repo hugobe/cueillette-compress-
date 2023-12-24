@@ -1,0 +1,13 @@
+.image_debut {
+    background-image: url(../img/photo/melons.jpeg);
+    background-repeat: no-repeat;
+    background-position: center 25%;
+    background-size: cover;
+    height : 30em;
+}
+
+
+#texte_date{
+    height : 50px;
+    min-height:50px;
+}
