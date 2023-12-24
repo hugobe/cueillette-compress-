@@ -10,5 +10,8 @@
             "src":"/(.*)",
             "dest": "api/app_cueillette.py"
         }
-    ]
+    ],
+    "functions":{"api/app_cueillette.py": {
+        "includeFiles": "data_base.py"
+    }}
 }
