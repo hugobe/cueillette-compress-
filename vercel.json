@@ -1,16 +1,7 @@
 {
-    "builds": [
-        {
-        "src":"api/app_cueillette.py",
-        "use":"@vercel/python"
-        }
-    ],
-    "routes": [
-        {
-            "src":"/(.*)",
-            "dest": "api/app_cueillette.py"
-        }
-    ],
+    "rewrites": [
+        { "source": "/(.*)", "destination": "/api/app_cueillette.py" }
+      ],
     "functions":{"api/app_cueillette.py": {
         "includeFiles": "data_base.py"
     }}
