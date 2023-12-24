@@ -1,8 +1,8 @@
 {
-    "rewrites": [
-        { "source": "/(.*)", "destination": "/api/app_cueillette.py" }
-      ],
-    "functions":{"api/app_cueillette.py": {
-        "includeFiles": "data_base.py"
-    }}
-}
+    "functions": {
+      "api/app_cueillette.py": {
+        "includeFiles": "data_base.oy"
+      }
+    },
+    "routes": [{ "src": "/", "dest": "api/app_cueillette.py" }]
+  }
